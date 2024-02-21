@@ -8,6 +8,7 @@
 #include <vector>
 #include <list>
 #include <iterator>
+#include <span>
 #include <algorithm>
 #include <cstdlib>
 #include <string>
@@ -1130,6 +1131,14 @@ class composite : public component
    }
 
 };
+
+auto span_print (vector<int> in)
+{
+   if(in.empty() == false)
+   cout << in[0] << endl;
+
+   return 9;
+};
  
 int main ()
 {
@@ -1385,6 +1394,10 @@ int main ()
    replaceCommand1.excute();
 
    printCommand1.excute();
+
+   vector<int> sp {1,2,34,5};
+
+   // span_print(sp);
 
    // if (const char* env_p = std::getenv("PATH"))
    //    std::cout << "Your PATH is: " << env_p << '\n';
