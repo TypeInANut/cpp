@@ -1132,13 +1132,23 @@ class composite : public component
 
 };
 
-auto span_print (vector<int> in)
+void span_print (vector<int> in)
 {
    if(in.empty() == false)
    cout << in[0] << endl;
+}
 
-   return 9;
+class pl{
+   public:
+
+   int q;
+   char p;
 };
+
+bool less_q (pl const& x, pl const& y)
+{
+   return x.q < y.q;
+}
  
 int main ()
 {
@@ -1396,6 +1406,13 @@ int main ()
    printCommand1.excute();
 
    vector<int> sp {1,2,34,5};
+
+   vector<pl> pl1 {{2,'c'},{1,'b'},{3,'a'}};
+
+   auto i12 = min_element(begin(pl1),end(pl1),less_q);
+   auto q1 = i12 ->q;
+   auto c1 = i12 ->p;
+   cout << q1 <<"this is p: " << c1 << endl;
 
    // span_print(sp);
 
