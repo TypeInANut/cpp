@@ -1150,6 +1150,43 @@ bool less_q (pl const& x, pl const& y)
    return x.q < y.q;
 }
  
+ class serviceInterface
+ {
+   public:
+   virtual void operation() = 0;
+ };
+
+ class service : public serviceInterface
+ {
+   public:
+   void operation(){
+      cout << "I'm the true service" << endl;
+   }
+ };
+
+ class proxy : public serviceInterface
+ {
+   service *realService;
+
+   public:
+   proxy(service &s){
+      this->realService = &s;
+   } 
+
+   bool checkAccess(){
+      if(realService != NULL)
+         return true;
+      else
+         return false;
+   }
+
+   void operation(){
+      if(this->checkAccess())
+         realService->operation();
+      else 
+         cout << "The service you call dosn't exist." << endl;
+   }
+ };
 int main ()
 {
     
@@ -1414,6 +1451,11 @@ int main ()
    auto c1 = i12 ->p;
    cout << q1 <<"this is p: " << c1 << endl;
 
+   service s;
+   proxy p1(s);
+   p1.operation();
+
+
    // span_print(sp);
 
    // if (const char* env_p = std::getenv("PATH"))
@@ -1423,5 +1465,4 @@ int main ()
 
    return 0;  //for the test
    
-
 }

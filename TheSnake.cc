@@ -58,7 +58,7 @@ void GameRender(string playerName)
             else if (i == fruitCordY && j == fruitCordX)
                 cout << "#";
             //Creating snake's head with 'O'
-            else {
+            else{
                 bool prTail = false;
                 for(int k = 0 ; k < snakeTailLen ; k++){
                     if(snakeTailX[k] == j && snakeTailY[k] == i){

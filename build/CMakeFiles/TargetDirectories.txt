@@ -1,0 +1,3 @@
+D:/code/Cpp/build/CMakeFiles/MySnake.dir
+D:/code/Cpp/build/CMakeFiles/edit_cache.dir
+D:/code/Cpp/build/CMakeFiles/rebuild_cache.dir

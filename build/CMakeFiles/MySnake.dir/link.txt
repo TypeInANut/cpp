@@ -1,0 +1,3 @@
+D:\cmake\bin\cmake.exe -E rm -f CMakeFiles\MySnake.dir/objects.a
+D:\MingW\ucrt64\bin\ar.exe qc CMakeFiles\MySnake.dir/objects.a @CMakeFiles\MySnake.dir\objects1.rsp
+D:\MingW\ucrt64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\MySnake.dir/objects.a -Wl,--no-whole-archive -o MySnake.exe -Wl,--out-implib,libMySnake.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MySnake.dir\linkLibs.rsp

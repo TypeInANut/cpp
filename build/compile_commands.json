@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/code/Cpp/build",
+  "command": "D:\\MingW\\ucrt64\\bin\\g++.exe   -g -o CMakeFiles\\MySnake.dir\\TheSnake.cc.obj -c D:\\code\\Cpp\\TheSnake.cc",
+  "file": "D:/code/Cpp/TheSnake.cc",
+  "output": "CMakeFiles/MySnake.dir/TheSnake.cc.obj"
+}
+]
