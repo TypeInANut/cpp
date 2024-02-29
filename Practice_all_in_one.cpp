@@ -1187,6 +1187,70 @@ bool less_q (pl const& x, pl const& y)
          cout << "The service you call dosn't exist." << endl;
    }
  };
+
+class subsystem1
+{
+   public:
+   void operation(){
+      cout << "I'm subsystem1" << endl;
+   }
+};
+class subsystem2
+{
+   public:
+   void operation(){
+      cout << "I'm subsystem2" << endl;
+   }
+};
+class subsystem3
+{
+   public:
+   void operation(){
+      cout << "I'm subsystem3" << endl;
+   }
+};
+class subsystem4
+{
+   public:
+   void operation(){
+      cout << "I'm subsystem4" << endl;
+   }
+};
+ class facade
+ {
+   subsystem1 *sub1;
+   subsystem2 *sub2;
+   subsystem3 *sub3;
+   subsystem4 *sub4;
+
+   facade *additionalFacad;
+
+   public:
+
+   facade(subsystem1 &s1,subsystem2 &s2, subsystem3 &s3, subsystem4 &s4){
+      sub1 = &s1;
+      sub2 = &s2;
+      sub3 = &s3;
+      sub4 = &s4;
+   }
+   template<class T>
+   bool checkAccessable(T *t){
+      if(t != NULL)
+         return true;
+      else  
+         return false;
+   }
+
+   template<class T>
+   void subsystemOperation(T *t){
+      if(checkAccessable(t))
+         t->operation();
+      else
+         cout << "The object you call doesn't exist" << endl;
+   }
+
+ };
+
 int main ()
 {
     
